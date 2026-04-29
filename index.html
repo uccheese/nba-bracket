@@ -7,43 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #060608;
-  --card: #13131e;
-  --card2: #17172a;
-  --border: rgba(255,255,255,0.07);
-  --border-hi: rgba(255,255,255,0.14);
-  --accent-e: #f04d4d;
-  --accent-w: #3d9ef5;
-  --gold: #f5b943;
-  --gold-glow: rgba(245,185,67,0.22);
-  --green: #22c55e;
-  --muted: #52527a;
-  --dim: #1e1e30;
-  --text: #e8e8f4;
-  --textd: #7a7a9a;
-  --conn-e: rgba(240,77,77,0.4);
-  --conn-w: rgba(61,158,245,0.4);
-  --r: 9px;
+  --bg:#060608;--card:#13131e;--card2:#17172a;
+  --border:rgba(255,255,255,0.07);--border-hi:rgba(255,255,255,0.14);
+  --accent-e:#f04d4d;--accent-w:#3d9ef5;
+  --gold:#f5b943;--gold-glow:rgba(245,185,67,0.22);
+  --green:#22c55e;--muted:#52527a;--dim:#1e1e30;
+  --text:#e8e8f4;--textd:#7a7a9a;
+  --conn-e:rgba(240,77,77,0.4);--conn-w:rgba(61,158,245,0.4);
+  --r:9px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
-body::before{
-  content:'';position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 55% 50% at 15% 50%,rgba(240,77,77,.05) 0%,transparent 70%),
-    radial-gradient(ellipse 55% 50% at 85% 50%,rgba(61,158,245,.05) 0%,transparent 70%),
-    radial-gradient(ellipse 40% 40% at 50% 100%,rgba(245,185,67,.06) 0%,transparent 60%);
-  pointer-events:none;z-index:0;
-}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 55% 50% at 15% 50%,rgba(240,77,77,.05) 0%,transparent 70%),radial-gradient(ellipse 55% 50% at 85% 50%,rgba(61,158,245,.05) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 50% 100%,rgba(245,185,67,.06) 0%,transparent 60%);pointer-events:none;z-index:0;}
 
-/* Header */
-header{
-  position:relative;z-index:10;
-  background:rgba(6,6,8,.92);backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  padding:18px 24px 14px;
-  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-}
+header{position:relative;z-index:10;background:rgba(6,6,8,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:18px 24px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
 .brand h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4.5vw,54px);letter-spacing:4px;line-height:1;color:#fff;}
 .brand h1 em{font-style:normal;color:var(--gold);}
 .brand .sub{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:5px;}
@@ -51,69 +28,51 @@ header{
 .dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:5px;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 .rl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;}
-.nr{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold);margin-top:3px;}
+.nr{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--gold);margin-top:3px;}
 .lu{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);margin-top:2px;}
 
-/* Conf bar */
 .conf-bar{position:relative;z-index:10;display:flex;justify-content:space-between;padding:10px 24px 0;}
 .clabel{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:5px;}
 .clabel.e{color:var(--accent-e);}
 .clabel.w{color:var(--accent-w);}
 
-/* Bracket */
 #bracket-outer{position:relative;z-index:10;overflow-x:auto;padding:0 0 80px;}
 #bracket{display:flex;min-width:880px;padding:14px 14px 0;position:relative;}
 
-/* Layout */
 .half{flex:1;display:flex;position:relative;}
 .half.east{flex-direction:row;}
 .half.west{flex-direction:row-reverse;}
-
 .rcol{display:flex;flex-direction:column;position:relative;}
 .rcol.r1{flex:1.15;}
 .rcol.r2{flex:1;}
 .rcol.r3{flex:.8;}
-
-.rh{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;text-align:center;padding:5px 4px 10px;}
+.rh,.blank-rh{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;text-align:center;padding:5px 4px 10px;}
 .slots{flex:1;display:flex;flex-direction:column;}
 .top-grp{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;}
 .bot-grp{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;}
 .grp-gap{height:10px;flex-shrink:0;}
-.r2-grp{flex:1;display:flex;flex-direction:column;justify-content:center;}
-.r3-grp{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.r2-grp,.r3-grp{flex:1;display:flex;flex-direction:column;justify-content:center;}
 
-/* Matchup card */
 .mc{margin:4px 5px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:border-color .2s,box-shadow .2s;}
 .mc:hover{border-color:var(--border-hi);box-shadow:0 4px 20px rgba(0,0,0,.4);}
 .mc.done{opacity:.72;}
 .mc.done:hover{opacity:.94;}
-.mc-lbl{
-  font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:1.5px;
-  color:var(--muted);text-transform:uppercase;
-  padding:5px 9px 4px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-}
+.mc-lbl{font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;padding:5px 9px 4px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .badge{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1px;padding:1px 5px;border-radius:3px;text-transform:uppercase;}
 .badge.live{background:rgba(34,197,94,.15);color:var(--green);}
 .badge.fin{background:rgba(255,255,255,.05);color:var(--muted);}
 
-/* Team row */
 .tr{display:flex;align-items:center;padding:7px 10px 7px 7px;gap:6px;border-bottom:1px solid var(--border);min-height:44px;transition:background .15s;position:relative;}
 .tr:last-child{border-bottom:none;}
 .tr.winning{background:rgba(245,185,67,.07);}
 .tr.winner{background:rgba(34,197,94,.1);}
 .tr.loser{opacity:.38;}
-
 .sd{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted);width:12px;flex-shrink:0;text-align:center;}
 .lw{width:28px;height:28px;flex-shrink:0;display:flex;align-items:center;justify-content:center;position:relative;}
-/* fallback circle */
 .fb{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:8px;color:#fff;flex-shrink:0;}
-
-/* win/loss badge */
 .wbadge{position:absolute;right:-3px;bottom:-3px;width:12px;height:12px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;line-height:1;}
 .wbadge.ok{background:var(--green);color:#000;}
 .wbadge.ko{background:#2a2a3a;color:var(--muted);}
-
 .tn{font-size:12px;font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .tn.out{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(255,255,255,.1);}
 .tn.hi{color:#fff;}
@@ -122,16 +81,12 @@ header{
 .wb.trail{color:var(--muted);}
 .wb.champ{color:var(--green);}
 
-/* Blank line placeholders for future rounds */
 .blank-col{flex:1;display:flex;flex-direction:column;padding:5px;}
-.blank-rh{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2.5px;color:var(--muted);text-transform:uppercase;text-align:center;padding:5px 4px 10px;}
 .blank-slots{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:8px;}
 .blank-line{height:1px;background:var(--dim);border-radius:1px;margin:0 6px;}
 
-/* Connector SVG */
 .connector-svg{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
 
-/* Finals center */
 .fcenter{width:190px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 5px;position:relative;z-index:5;}
 .trophy{font-size:32px;margin-bottom:7px;filter:drop-shadow(0 0 14px rgba(245,185,67,.5));animation:glow 3s ease-in-out infinite;}
 @keyframes glow{0%,100%{filter:drop-shadow(0 0 6px rgba(245,185,67,.3));}50%{filter:drop-shadow(0 0 22px rgba(245,185,67,.8));}}
@@ -141,16 +96,18 @@ header{
 .frow-lbl{font-size:10.5px;color:var(--textd);flex:1;}
 .fdiv{height:1px;background:rgba(245,185,67,.15);}
 
-/* Status bar */
 .sbar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(6,6,8,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border);padding:8px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
 .leg{display:flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;}
 .lsq{width:8px;height:8px;border-radius:2px;flex-shrink:0;}
 
-/* Refresh notice */
+#loading{position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;justify-content:center;height:300px;gap:14px;}
+.spinner{width:36px;height:36px;border:3px solid var(--dim);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-txt{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+
 .rnote{position:fixed;top:14px;right:14px;z-index:9999;background:var(--card);border:1px solid var(--gold);border-radius:6px;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);display:none;}
 .rnote.on{display:block;}
 
-/* Mobile */
 @media(max-width:768px){
   header{padding:12px 16px 10px;}
   .brand h1{font-size:24px;letter-spacing:3px;}
@@ -160,8 +117,6 @@ header{
   .lw{width:22px;height:22px;}
   .tr{padding:5px 7px 5px 5px;min-height:38px;}
   .fcenter{width:150px;}
-  .ftitle{font-size:12px;}
-  .trophy{font-size:24px;}
   .sbar{padding:7px 16px;gap:10px;}
 }
 ::-webkit-scrollbar{height:4px;width:4px;}
@@ -174,12 +129,12 @@ header{
 <header>
   <div class="brand">
     <h1>Nate's <em>NBA</em> Playoff Tracker</h1>
-    <div class="sub">2026 · First Round · Live Bracket</div>
+    <div class="sub">2026 · First Round · Live Data</div>
   </div>
   <div class="hdr-r">
-    <div class="rl"><span class="dot"></span>Auto-refresh · 9 PM · 11 PM · 1 AM ET</div>
-    <div class="nr" id="nr">Next refresh: —</div>
-    <div class="lu" id="lu">Last updated: —</div>
+    <div class="rl"><span class="dot"></span>Live · Updates every page load</div>
+    <div class="nr" id="nr">Loading…</div>
+    <div class="lu" id="lu"></div>
   </div>
 </header>
 
@@ -189,21 +144,22 @@ header{
 </div>
 
 <div id="bracket-outer">
-  <div id="bracket"></div>
+  <div id="loading"><div class="spinner"></div><div class="loading-txt">Fetching live scores…</div></div>
+  <div id="bracket" style="display:none"></div>
 </div>
 
 <div class="sbar">
   <div class="leg"><div class="lsq" style="background:var(--green)"></div>Won Series</div>
   <div class="leg"><div class="lsq" style="background:var(--gold)"></div>Leading</div>
   <div class="leg"><div class="lsq" style="background:var(--muted)"></div>Trailing / Out</div>
-  <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:var(--muted);letter-spacing:1px;">SPORTRADAR · NBA</div>
+  <div style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:7.5px;color:var(--muted);letter-spacing:1px;" id="src-lbl">ESPN · LIVE</div>
 </div>
 
-<div class="rnote" id="rn">↻ Refreshing bracket…</div>
+<div class="rnote" id="rn">↻ Refreshing…</div>
 
 <script>
-// ── NBA logo IDs ────────────────────────────────────────────────────────────
-const NBA_ID = {
+// ── Team data ─────────────────────────────────────────────────────────────
+var NBA_ID = {
   ATL:1610612737,BOS:1610612738,CLE:1610612739,CHI:1610612741,
   DAL:1610612742,DEN:1610612743,GSW:1610612744,HOU:1610612745,
   LAC:1610612746,LAL:1610612747,MIA:1610612748,MIL:1610612749,
@@ -212,323 +168,303 @@ const NBA_ID = {
   SAC:1610612758,SAS:1610612759,OKC:1610612760,TOR:1610612761,
   UTA:1610612762,MEM:1610612763,WAS:1610612764,DET:1610612765,CHA:1610612766
 };
-const CLR = {
+var CLR = {
   DET:"#1D428A",ORL:"#0077C0",BOS:"#007A33",PHI:"#006BB6",
   NYK:"#003DA5",ATL:"#E03A3E",CLE:"#860038",TOR:"#CE1141",
-  OKC:"#007AC1",PHX:"#1D1160",SAS:"#9EA1A2",POR:"#E03A3E",
+  OKC:"#007AC1",PHX:"#1D1160",SAS:"#C0C0C0",POR:"#E03A3E",
   DEN:"#0E2240",MIN:"#0C2340",LAL:"#552583",HOU:"#CE1141"
 };
-
-// Logo: try NBA CDN, fall back to colored circle — no inline onerror HTML injection
-function logo(abbr, sz) {
-  sz = sz || 28;
-  const id = NBA_ID[abbr];
-  const color = CLR[abbr] || '#333';
-
-  // Create wrapper div; use a data attribute so we can swap on error via a global handler
-  if (id) {
-    return `<img class="team-logo" data-abbr="${abbr}" data-color="${color}" data-sz="${sz}"
-      src="https://cdn.nba.com/logos/nba/${id}/global/L/logo.svg"
-      width="${sz}" height="${sz}"
-      style="object-fit:contain;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;"
-      alt="${abbr}">`;
-  }
-  return fallbackCircle(abbr, color, sz);
-}
-
-function fallbackCircle(abbr, color, sz) {
-  return `<div class="fb" style="background:${color};width:${sz}px;height:${sz}px">${abbr}</div>`;
-}
-
-// Global image error handler — replaces broken logos with colored circle
-document.addEventListener('error', function(e) {
-  const img = e.target;
-  if (img.tagName === 'IMG' && img.classList.contains('team-logo')) {
-    const abbr  = img.getAttribute('data-abbr')  || '';
-    const color = img.getAttribute('data-color') || '#333';
-    const sz    = parseInt(img.getAttribute('data-sz') || '28');
-    const fb = document.createElement('div');
-    fb.className = 'fb';
-    fb.style.cssText = `background:${color};width:${sz}px;height:${sz}px`;
-    fb.textContent = abbr;
-    img.parentNode.replaceChild(fb, img);
-  }
-}, true);
-
-// ── 2026 First Round Data ───────────────────────────────────────────────────
-const D = {
-  e: {
-    top: [
-      {st:"ip",  t1:{a:"DET",n:"Pistons",     s:1,w:1}, t2:{a:"ORL",n:"Magic",         s:8,w:3}},
-      {st:"ip",  t1:{a:"CLE",n:"Cavaliers",   s:4,w:2}, t2:{a:"TOR",n:"Raptors",       s:5,w:2}},
-    ],
-    bot: [
-      {st:"ip",  t1:{a:"BOS",n:"Celtics",     s:2,w:3}, t2:{a:"PHI",n:"76ers",         s:7,w:1}},
-      {st:"ip",  t1:{a:"NYK",n:"Knicks",      s:3,w:2}, t2:{a:"ATL",n:"Hawks",         s:6,w:2}},
-    ]
-  },
-  w: {
-    top: [
-      {st:"done",t1:{a:"OKC",n:"Thunder",     s:1,w:4}, t2:{a:"PHX",n:"Suns",          s:8,w:0}},
-      {st:"ip",  t1:{a:"LAL",n:"Lakers",      s:4,w:3}, t2:{a:"HOU",n:"Rockets",       s:5,w:1}},
-    ],
-    bot: [
-      {st:"ip",  t1:{a:"SAS",n:"Spurs",       s:2,w:3}, t2:{a:"POR",n:"Trail Blazers", s:7,w:1}},
-      {st:"ip",  t1:{a:"DEN",n:"Nuggets",     s:3,w:2}, t2:{a:"MIN",n:"Timberwolves",  s:6,w:3}},
-    ]
-  }
+var NAMES = {
+  DET:"Pistons",ORL:"Magic",BOS:"Celtics",PHI:"76ers",
+  NYK:"Knicks",ATL:"Hawks",CLE:"Cavaliers",TOR:"Raptors",
+  OKC:"Thunder",PHX:"Suns",SAS:"Spurs",POR:"Trail Blazers",
+  DEN:"Nuggets",MIN:"Timberwolves",LAL:"Lakers",HOU:"Rockets"
 };
 
-// ── Render helpers ──────────────────────────────────────────────────────────
-function teamRow(t, opp, done) {
-  const isW  = done && t.w === 4;
-  const isL  = done && t.w < 4;
-  const lead = !done && t.w > opp.w;
-  const rc = "tr" + (isW?" winner" : lead?" winning" : isL?" loser" : "");
-  const nc = "tn" + (isW?" hi" : isL?" out" : "");
-  const wc = "wb " + (isW?"champ" : lead?"lead" : "trail");
-  const badge = isW
-    ? '<div class="wbadge ok">✓</div>'
-    : isL ? '<div class="wbadge ko">✕</div>' : "";
-  return `<div class="${rc}">
-    <span class="sd">${t.s}</span>
-    <div class="lw">${logo(t.a,28)}${badge}</div>
-    <span class="${nc}">${t.n}</span>
-    <span class="${wc}">${t.w}</span>
-  </div>`;
+// ── Fallback: latest known series records (as of Apr 29 2026) ─────────────
+// This is shown instantly while the API loads, then replaced if API succeeds
+var FALLBACK = {
+  'east-1v8': {t1:{a:"DET",s:1,w:1}, t2:{a:"ORL",s:8,w:3}, done:false},
+  'east-4v5': {t1:{a:"CLE",s:4,w:2}, t2:{a:"TOR",s:5,w:2}, done:false},
+  'east-3v6': {t1:{a:"NYK",s:3,w:3}, t2:{a:"ATL",s:6,w:2}, done:false},
+  'east-2v7': {t1:{a:"BOS",s:2,w:3}, t2:{a:"PHI",s:7,w:2}, done:false},
+  'west-1v8': {t1:{a:"OKC",s:1,w:4}, t2:{a:"PHX",s:8,w:0}, done:true},
+  'west-4v5': {t1:{a:"LAL",s:4,w:3}, t2:{a:"HOU",s:5,w:1}, done:false},
+  'west-3v6': {t1:{a:"DEN",s:3,w:2}, t2:{a:"MIN",s:6,w:3}, done:false},
+  'west-2v7': {t1:{a:"SAS",s:2,w:4}, t2:{a:"POR",s:7,w:1}, done:true},
+};
+
+// ── Parse ESPN scoreboard into series map ─────────────────────────────────
+var EAST_TEAMS = {ATL:1,BOS:1,BKN:1,CHA:1,CHI:1,CLE:1,DET:1,IND:1,MIA:1,MIL:1,NYK:1,ORL:1,PHI:1,TOR:1,WAS:1};
+
+function parseESPN(data) {
+  var result = {};
+  // ESPN uses "events" for games; we want series records
+  // The scoreboard has a "groups" or "leagues" section with series
+  // Try multiple paths ESPN uses
+  var seriesArr = [];
+
+  // Path 1: data.sports[0].leagues[0].events (series level)
+  try { seriesArr = data.sports[0].leagues[0].events; } catch(e) {}
+  // Path 2: data.events
+  if (!seriesArr || !seriesArr.length) { try { seriesArr = data.events; } catch(e) {} }
+
+  if (!seriesArr || !seriesArr.length) return null;
+
+  seriesArr.forEach(function(ev) {
+    try {
+      var comps = ev.competitions[0].competitors;
+      if (!comps || comps.length < 2) return;
+
+      var teams = comps.map(function(c) {
+        var abbr = (c.team.abbreviation || '').toUpperCase();
+        // normalize ESPN abbrevs
+        if (abbr === 'GS') abbr = 'GSW';
+        if (abbr === 'SA') abbr = 'SAS';
+        if (abbr === 'NO') abbr = 'NOP';
+        if (abbr === 'NY') abbr = 'NYK';
+        if (abbr === 'PHO') abbr = 'PHX';
+        var seed = parseInt(c.curatedRank && c.curatedRank.current || c.seed || 0);
+        var wins = 0;
+        // series wins are in seriesRecord
+        if (c.seriesRecord) wins = parseInt(c.seriesRecord.wins || 0);
+        else if (c.records) {
+          var sr = c.records.find(function(r){return r.type==='vsconf'||r.type==='playoffseries';});
+          if (sr) wins = parseInt(sr.wins || 0);
+        }
+        return {a:abbr, s:seed, w:wins};
+      });
+
+      var conf = EAST_TEAMS[teams[0].a] ? 'east' : 'west';
+      var s1 = Math.min(teams[0].s, teams[1].s);
+      var s2 = Math.max(teams[0].s, teams[1].s);
+      var key = conf + '-' + s1 + 'v' + s2;
+      var done = (teams[0].w === 4 || teams[1].w === 4);
+
+      var t1 = teams[0].s <= teams[1].s ? teams[0] : teams[1];
+      var t2 = teams[0].s <= teams[1].s ? teams[1] : teams[0];
+      result[key] = {t1:t1, t2:t2, done:done};
+    } catch(e) {}
+  });
+
+  return Object.keys(result).length >= 4 ? result : null;
 }
 
-function seriesCard(s) {
-  const done = s.st === "done";
-  const g = s.t1.w + s.t2.w;
-  const ldr = s.t1.w >= s.t2.w ? s.t1 : s.t2;
-  const lbl = done ? ldr.n + " wins" : "Game " + (g+1);
-  const bdg = done
-    ? '<span class="badge fin">Final</span>'
-    : '<span class="badge live">Active</span>';
-  return `<div class="mc${done?" done":""}">
-    <div class="mc-lbl"><span>${lbl}</span>${bdg}</div>
-    ${teamRow(s.t1, s.t2, done)}
-    ${teamRow(s.t2, s.t1, done)}
-  </div>`;
-}
-
-// Blank line placeholder for future rounds (2 lines per slot)
-function blankLines(count) {
-  let out = '<div class="blank-slots">';
-  for (let i = 0; i < count; i++) out += '<div class="blank-line"></div>';
-  out += '</div>';
-  return out;
-}
-
-// ── Build bracket ───────────────────────────────────────────────────────────
-function build() {
-  const {e,w} = D;
-
-  document.getElementById("bracket").innerHTML = `
-
-  <!-- EAST -->
-  <div class="half east" id="e-half">
-
-    <!-- E R1 - actual matchups -->
-    <div class="rcol r1" id="e-r1">
-      <div class="rh">First Round</div>
-      <div class="slots">
-        <div class="top-grp">
-          ${seriesCard(e.top[0])}
-          ${seriesCard(e.top[1])}
-        </div>
-        <div class="grp-gap"></div>
-        <div class="bot-grp">
-          ${seriesCard(e.bot[0])}
-          ${seriesCard(e.bot[1])}
-        </div>
-      </div>
-    </div>
-
-    <!-- E R2 - blank lines -->
-    <div class="rcol r2 blank-col" id="e-r2">
-      <div class="blank-rh">Semifinals</div>
-      <div class="slots">
-        <div class="r2-grp">${blankLines(2)}</div>
-        <div class="r2-grp">${blankLines(2)}</div>
-      </div>
-    </div>
-
-    <!-- E R3 - blank line -->
-    <div class="rcol r3 blank-col" id="e-r3">
-      <div class="blank-rh">Conf Finals</div>
-      <div class="r3-grp">${blankLines(1)}</div>
-    </div>
-
-    <svg class="connector-svg" id="svg-e"></svg>
-  </div>
-
-  <!-- FINALS -->
-  <div class="fcenter">
-    <div class="trophy">🏆</div>
-    <div class="ftitle">NBA Finals</div>
-    <div class="fcard">
-      <div class="frow">
-        <span class="frow-lbl" style="color:var(--accent-w)">West Champion</span>
-      </div>
-      <div class="fdiv"></div>
-      <div class="frow">
-        <span class="frow-lbl" style="color:var(--accent-e)">East Champion</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- WEST -->
-  <div class="half west" id="w-half">
-
-    <!-- W R1 - actual matchups -->
-    <div class="rcol r1" id="w-r1">
-      <div class="rh">First Round</div>
-      <div class="slots">
-        <div class="top-grp">
-          ${seriesCard(w.top[0])}
-          ${seriesCard(w.top[1])}
-        </div>
-        <div class="grp-gap"></div>
-        <div class="bot-grp">
-          ${seriesCard(w.bot[0])}
-          ${seriesCard(w.bot[1])}
-        </div>
-      </div>
-    </div>
-
-    <!-- W R2 - blank lines -->
-    <div class="rcol r2 blank-col" id="w-r2">
-      <div class="blank-rh">Semifinals</div>
-      <div class="slots">
-        <div class="r2-grp">${blankLines(2)}</div>
-        <div class="r2-grp">${blankLines(2)}</div>
-      </div>
-    </div>
-
-    <!-- W R3 - blank line -->
-    <div class="rcol r3 blank-col" id="w-r3">
-      <div class="blank-rh">Conf Finals</div>
-      <div class="r3-grp">${blankLines(1)}</div>
-    </div>
-
-    <svg class="connector-svg" id="svg-w"></svg>
-  </div>`;
-}
-
-// ── SVG connector lines ─────────────────────────────────────────────────────
-function ry(el,ref){const a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.top-b.top+a.height/2;}
-function rx(el,ref){const a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.right-b.left;}
-function lx(el,ref){const a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.left-b.left;}
-function P(d,c){return `<path d="${d}" stroke="${c}" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;}
-
-function drawLines() {
-  // EAST — connect R1 cards to blank lines in R2, and R2 blanks to R3 blank
-  const eh = document.getElementById("e-half");
-  if (!eh) return;
-  const svgE = document.getElementById("svg-e");
-  svgE.setAttribute("width", eh.offsetWidth);
-  svgE.setAttribute("height", eh.offsetHeight);
-
-  const eC  = document.querySelectorAll("#e-r1 .mc");
-  const e2  = document.querySelectorAll("#e-r2 .blank-slots");
-  const e3  = document.querySelector("#e-r3 .blank-slots");
-  const CE  = "var(--conn-e)";
-  let s = "";
-
-  if (eC.length >= 4 && e2.length >= 2) {
-    // R1 cards → R2 blank lines (top pair and bot pair)
-    const groups = [[0,1,0],[2,3,1]];
-    for (const [ia,ib,gi] of groups) {
-      const target = e2[gi];
-      const tMid   = ry(target, eh);
-      for (const i of [ia,ib]) {
-        const mx = (rx(eC[i],eh) + lx(target,eh)) / 2;
-        s += P(`M${rx(eC[i],eh)} ${ry(eC[i],eh)} H${mx} V${tMid} H${lx(target,eh)}`, CE);
-      }
-    }
-    // R2 blanks → R3 blank
-    if (e3) {
-      const tMid = ry(e3, eh);
-      for (let i = 0; i < 2; i++) {
-        const mx = (rx(e2[i],eh) + lx(e3,eh)) / 2;
-        s += P(`M${rx(e2[i],eh)} ${ry(e2[i],eh)} H${mx} V${tMid} H${lx(e3,eh)}`, CE);
-      }
-    }
+// ── Fetch from ESPN (two endpoints to try) ────────────────────────────────
+async function fetchLive() {
+  var urls = [
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?seasontype=3&limit=50',
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?groups=1&seasontype=3',
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard'
+  ];
+  for (var i = 0; i < urls.length; i++) {
+    try {
+      var r = await fetch(urls[i], {cache:'no-store', mode:'cors'});
+      if (!r.ok) continue;
+      var d = await r.json();
+      var parsed = parseESPN(d);
+      if (parsed) return parsed;
+    } catch(e) {}
   }
-  svgE.innerHTML = s;
+  return null;
+}
 
-  // WEST — flipped (row-reverse), so connections go right-to-left
-  const wh = document.getElementById("w-half");
-  const svgW = document.getElementById("svg-w");
-  svgW.setAttribute("width", wh.offsetWidth);
-  svgW.setAttribute("height", wh.offsetHeight);
-
-  const wC  = document.querySelectorAll("#w-r1 .mc");
-  const w2  = document.querySelectorAll("#w-r2 .blank-slots");
-  const w3  = document.querySelector("#w-r3 .blank-slots");
-  const CW  = "var(--conn-w)";
-  let ws = "";
-
-  if (wC.length >= 4 && w2.length >= 2) {
-    const groups = [[0,1,0],[2,3,1]];
-    for (const [ia,ib,gi] of groups) {
-      const target = w2[gi];
-      const tMid   = ry(target, wh);
-      for (const i of [ia,ib]) {
-        const mx = (lx(wC[i],wh) + rx(target,wh)) / 2;
-        ws += P(`M${lx(wC[i],wh)} ${ry(wC[i],wh)} H${mx} V${tMid} H${rx(target,wh)}`, CW);
-      }
-    }
-    if (w3) {
-      const tMid = ry(w3, wh);
-      for (let i = 0; i < 2; i++) {
-        const mx = (lx(w2[i],wh) + rx(w3,wh)) / 2;
-        ws += P(`M${lx(w2[i],wh)} ${ry(w2[i],wh)} H${mx} V${tMid} H${rx(w3,wh)}`, CW);
-      }
-    }
+// ── Logo helper ───────────────────────────────────────────────────────────
+function logo(abbr, sz) {
+  sz = sz||28;
+  var id = NBA_ID[abbr], color = CLR[abbr]||'#444';
+  if (id) {
+    return '<img class="tl" data-a="'+abbr+'" data-c="'+color+'" data-s="'+sz+'"'
+      +' src="https://cdn.nba.com/logos/nba/'+id+'/global/L/logo.svg"'
+      +' width="'+sz+'" height="'+sz+'"'
+      +' style="object-fit:contain;filter:drop-shadow(0 1px 4px rgba(0,0,0,.7));display:block;" alt="'+abbr+'">';
   }
-  svgW.innerHTML = ws;
+  return '<div class="fb" style="background:'+color+';width:'+sz+'px;height:'+sz+'px">'+abbr+'</div>';
+}
+document.addEventListener('error', function(e) {
+  var img=e.target;
+  if (img.tagName==='IMG' && img.classList.contains('tl')) {
+    var fb=document.createElement('div');
+    fb.className='fb';
+    fb.style.cssText='background:'+img.getAttribute('data-c')+';width:'+img.getAttribute('data-s')+'px;height:'+img.getAttribute('data-s')+'px';
+    fb.textContent=img.getAttribute('data-a');
+    if(img.parentNode) img.parentNode.replaceChild(fb,img);
+  }
+},true);
+
+// ── Render ────────────────────────────────────────────────────────────────
+function tRow(t, opp, done) {
+  var n = NAMES[t.a]||t.a;
+  var isW=done&&t.w===4, isL=done&&t.w<4, lead=!done&&t.w>opp.w;
+  var rc='tr'+(isW?' winner':lead?' winning':isL?' loser':'');
+  var nc='tn'+(isW?' hi':isL?' out':'');
+  var wc='wb '+(isW?'champ':lead?'lead':'trail');
+  var bd=isW?'<div class="wbadge ok">✓</div>':isL?'<div class="wbadge ko">✕</div>':'';
+  return '<div class="'+rc+'"><span class="sd">'+t.s+'</span>'
+    +'<div class="lw">'+logo(t.a,28)+bd+'</div>'
+    +'<span class="'+nc+'">'+n+'</span>'
+    +'<span class="'+wc+'">'+t.w+'</span></div>';
 }
 
-// ── Refresh scheduler ───────────────────────────────────────────────────────
-function etMin() {
-  const p = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
-  return parseInt(p.find(x=>x.type==="hour").value)*60 + parseInt(p.find(x=>x.type==="minute").value);
-}
-function getNext() {
-  const c = etMin();
-  const ts = [{m:21*60,l:"9:00 PM"},{m:23*60,l:"11:00 PM"},{m:25*60,l:"1:00 AM"}];
-  for (const t of ts) { if (c < t.m) return {l:t.l, ms:(t.m-c)*60000}; }
-  return {l:"9:00 PM", ms:((24*60-c)+21*60)*60000};
-}
-function tick() {
-  const {l,ms} = getNext();
-  const s=Math.floor(ms/1000), h=Math.floor(s/3600), m=Math.floor((s%3600)/60);
-  const cd = h>0 ? ` (in ${h}h ${m}m)` : m>0 ? ` (in ${m}m)` : "";
-  document.getElementById("nr").textContent = "Next: " + l + cd + " ET";
-}
-function sched() {
-  const {ms} = getNext();
-  setTimeout(function() {
-    document.getElementById("rn").classList.add("on");
-    setTimeout(function() { location.reload(); }, 1400);
-  }, ms);
+function sCard(s) {
+  if (!s) return '<div class="mc"><div class="mc-lbl"><span>TBD</span></div></div>';
+  var g=s.t1.w+s.t2.w;
+  var ldr=s.t1.w>=s.t2.w?s.t1:s.t2;
+  var lbl=s.done?(NAMES[ldr.a]||ldr.a)+' wins':'Game '+(g+1);
+  var bdg=s.done?'<span class="badge fin">Final</span>':'<span class="badge live">Active</span>';
+  return '<div class="mc'+(s.done?' done':'')+'"><div class="mc-lbl"><span>'+lbl+'</span>'+bdg+'</div>'
+    +tRow(s.t1,s.t2,s.done)+tRow(s.t2,s.t1,s.done)+'</div>';
 }
 
-// ── Init ────────────────────────────────────────────────────────────────────
-build();
+function blanks(n) {
+  var o='<div class="blank-slots">';
+  for(var i=0;i<n;i++) o+='<div class="blank-line"></div>';
+  return o+'</div>';
+}
 
-document.getElementById("lu").textContent = "Updated " +
-  new Date().toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit",timeZone:"America/New_York"}) + " ET";
+function buildBracket(series) {
+  function g(conf,s1,s2){return series[conf+'-'+Math.min(s1,s2)+'v'+Math.max(s1,s2)]||null;}
+  var eT0=g('east',1,8),eT1=g('east',4,5),eB0=g('east',3,6),eB1=g('east',2,7);
+  var wT0=g('west',1,8),wT1=g('west',4,5),wB0=g('west',3,6),wB1=g('west',2,7);
+
+  return (
+    '<div class="half east" id="e-half">'
+      +'<div class="rcol r1" id="e-r1"><div class="rh">First Round</div>'
+        +'<div class="slots">'
+          +'<div class="top-grp">'+sCard(eT0)+sCard(eT1)+'</div>'
+          +'<div class="grp-gap"></div>'
+          +'<div class="bot-grp">'+sCard(eB0)+sCard(eB1)+'</div>'
+        +'</div></div>'
+      +'<div class="rcol r2 blank-col" id="e-r2"><div class="blank-rh">Semifinals</div>'
+        +'<div class="slots"><div class="r2-grp">'+blanks(2)+'</div><div class="r2-grp">'+blanks(2)+'</div></div></div>'
+      +'<div class="rcol r3 blank-col" id="e-r3"><div class="blank-rh">Conf Finals</div>'
+        +'<div class="r3-grp">'+blanks(1)+'</div></div>'
+      +'<svg class="connector-svg" id="svg-e"></svg>'
+    +'</div>'
+    +'<div class="fcenter">'
+      +'<div class="trophy">🏆</div>'
+      +'<div class="ftitle">NBA Finals</div>'
+      +'<div class="fcard">'
+        +'<div class="frow"><span class="frow-lbl" style="color:var(--accent-w)">West Champion</span></div>'
+        +'<div class="fdiv"></div>'
+        +'<div class="frow"><span class="frow-lbl" style="color:var(--accent-e)">East Champion</span></div>'
+      +'</div>'
+    +'</div>'
+    +'<div class="half west" id="w-half">'
+      +'<div class="rcol r1" id="w-r1"><div class="rh">First Round</div>'
+        +'<div class="slots">'
+          +'<div class="top-grp">'+sCard(wT0)+sCard(wT1)+'</div>'
+          +'<div class="grp-gap"></div>'
+          +'<div class="bot-grp">'+sCard(wB0)+sCard(wB1)+'</div>'
+        +'</div></div>'
+      +'<div class="rcol r2 blank-col" id="w-r2"><div class="blank-rh">Semifinals</div>'
+        +'<div class="slots"><div class="r2-grp">'+blanks(2)+'</div><div class="r2-grp">'+blanks(2)+'</div></div></div>'
+      +'<div class="rcol r3 blank-col" id="w-r3"><div class="blank-rh">Conf Finals</div>'
+        +'<div class="r3-grp">'+blanks(1)+'</div></div>'
+      +'<svg class="connector-svg" id="svg-w"></svg>'
+    +'</div>'
+  );
+}
+
+// ── SVG connectors ────────────────────────────────────────────────────────
+function ry(el,ref){var a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.top-b.top+a.height/2;}
+function rx(el,ref){var a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.right-b.left;}
+function lx(el,ref){var a=el.getBoundingClientRect(),b=ref.getBoundingClientRect();return a.left-b.left;}
+function P(d,c){return '<path d="'+d+'" stroke="'+c+'" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';}
+
+function drawLines(){
+  function doSide(halfId,r1Id,r2Id,r3Id,svgId,isWest){
+    var half=document.getElementById(halfId);if(!half)return;
+    var svg=document.getElementById(svgId);
+    svg.setAttribute('width',half.offsetWidth);svg.setAttribute('height',half.offsetHeight);
+    var cards=document.querySelectorAll('#'+r1Id+' .mc');
+    var b2=document.querySelectorAll('#'+r2Id+' .blank-slots');
+    var b3=document.querySelector('#'+r3Id+' .blank-slots');
+    var s='',C=isWest?'var(--conn-w)':'var(--conn-e)';
+    if(cards.length>=4&&b2.length>=2){
+      [[0,1,0],[2,3,1]].forEach(function(g){
+        var tgt=b2[g[2]],tMid=ry(tgt,half);
+        [g[0],g[1]].forEach(function(i){
+          var xFrom=isWest?lx(cards[i],half):rx(cards[i],half);
+          var xTo=isWest?rx(tgt,half):lx(tgt,half);
+          var mx=(xFrom+xTo)/2;
+          s+=P('M'+xFrom+' '+ry(cards[i],half)+' H'+mx+' V'+tMid+' H'+xTo,C);
+        });
+      });
+      if(b3){
+        var tMid3=ry(b3,half);
+        [0,1].forEach(function(i){
+          var xFrom=isWest?lx(b2[i],half):rx(b2[i],half);
+          var xTo=isWest?rx(b3,half):lx(b3,half);
+          var mx=(xFrom+xTo)/2;
+          s+=P('M'+xFrom+' '+ry(b2[i],half)+' H'+mx+' V'+tMid3+' H'+xTo,C);
+        });
+      }
+    }
+    svg.innerHTML=s;
+  }
+  doSide('e-half','e-r1','e-r2','e-r3','svg-e',false);
+  doSide('w-half','w-r1','w-r2','w-r3','svg-w',true);
+}
+
+// ── Scheduled auto-refresh ────────────────────────────────────────────────
+function etMin(){
+  var p=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
+  return parseInt(p.find(function(x){return x.type==='hour';}).value)*60+parseInt(p.find(function(x){return x.type==='minute';}).value);
+}
+function getNext(){
+  var c=etMin(),ts=[{m:21*60,l:'9:00 PM'},{m:23*60,l:'11:00 PM'},{m:25*60,l:'1:00 AM'}];
+  for(var i=0;i<ts.length;i++){if(c<ts[i].m)return{l:ts[i].l,ms:(ts[i].m-c)*60000};}
+  return{l:'9:00 PM',ms:((24*60-c)+21*60)*60000};
+}
+function tick(){
+  var r=getNext(),s=Math.floor(r.ms/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60);
+  var cd=h>0?' (in '+h+'h '+m+'m)':m>0?' (in '+m+'m)':'';
+  document.getElementById('nr').textContent='Next refresh: '+r.l+cd+' ET';
+}
+function schedRefresh(){
+  setTimeout(function(){
+    document.getElementById('rn').classList.add('on');
+    setTimeout(function(){location.reload();},1200);
+  }, getNext().ms);
+}
+
+// ── Render bracket helper ─────────────────────────────────────────────────
+function render(series, live) {
+  document.getElementById('loading').style.display='none';
+  var b=document.getElementById('bracket');
+  b.style.display='flex';
+  b.innerHTML=buildBracket(series);
+  var ts=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',timeZone:'America/New_York'});
+  document.getElementById('lu').textContent=(live?'Live · ':'Cached · ')+ts+' ET';
+  document.getElementById('src-lbl').textContent=live?'ESPN · LIVE':'CACHED DATA';
+  requestAnimationFrame(function(){setTimeout(drawLines,200);});
+  window.addEventListener('resize',function(){setTimeout(drawLines,80);});
+}
+
+// ── Main ──────────────────────────────────────────────────────────────────
+// Show fallback instantly so there's no blank screen
+document.getElementById('loading').style.display='none';
+var b=document.getElementById('bracket');
+b.style.display='flex';
+b.innerHTML=buildBracket(FALLBACK);
+document.getElementById('lu').textContent='Loading live data…';
+requestAnimationFrame(function(){setTimeout(drawLines,150);});
+
+// Then try to get live data and update
+fetchLive().then(function(live){
+  if(live){
+    render(live, true);
+  } else {
+    render(FALLBACK, false);
+  }
+}).catch(function(){
+  render(FALLBACK, false);
+});
 
 tick();
-sched();
-setInterval(tick, 60000);
-
-requestAnimationFrame(function(){ setTimeout(drawLines, 200); });
-window.addEventListener("resize", function(){ setTimeout(drawLines, 80); });
+schedRefresh();
+setInterval(tick,60000);
 </script>
 </body>
 </html>
